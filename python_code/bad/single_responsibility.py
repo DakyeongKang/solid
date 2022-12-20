@@ -3,6 +3,7 @@
 
 from abc import ABCMeta, abstractmethod
 
+
 class IEmail(object):
     __metaclass__ = ABCMeta
 
@@ -17,6 +18,7 @@ class IEmail(object):
     @abstractmethod
     def setContent(self, content):
         pass
+
 
 class Email(IEmail):
 
@@ -49,7 +51,8 @@ class Email(IEmail):
 
         template = "Sender: {sender}\nReceiver: {receiver}\nContent:\n{content}"
 
-        return template.format(sender = self.__sender, receiver = self.__receiver, content = self.__content)
+        return template.format(sender=self.__sender, receiver=self.__receiver, content=self.__content)
+
 
 def main():
     email = Email('IM', 'MyML')
@@ -57,6 +60,7 @@ def main():
     email.setReceiver('james')
     email.setContent('Hello, there!')
     print email
+
 
 if __name__ == '__main__':
     main()
