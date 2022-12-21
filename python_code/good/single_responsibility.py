@@ -12,22 +12,22 @@ class IEmail(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def setSender(self, sender):
+    def setsender(self, sender):
         pass
 
     @abstractmethod
-    def setReceiver(self, receiver):
+    def setreceiver(self, receiver):
         pass
 
     @abstractmethod
-    def setContent(self, content):
+    def setcontent(self, content):
         pass
 
 class IContent(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def getString(self):
+    def getstring(self):
         pass
 
 class MyContent(IContent):
@@ -73,7 +73,7 @@ def main():
     email.setReceiver('james')
     content = MyContent('Hello, there!')
     email.setContent(content)
-    print(email
+    print(email)
 
 if __name__ == '__main__':
     main()
